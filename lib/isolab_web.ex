@@ -27,6 +27,8 @@ defmodule IsolabWeb do
       import Plug.Conn
       import Phoenix.Controller
       import Phoenix.LiveView.Router
+
+      import IsolabWeb.Plugs
     end
   end
 

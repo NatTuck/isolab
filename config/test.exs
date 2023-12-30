@@ -6,7 +6,7 @@ import Config
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
 config :isolab, Isolab.Repo,
-  database: Path.expand("../isolab_test.db", Path.dirname(__ENV__.file)),
+  database: Path.expand("../db/isolab_test.db", Path.dirname(__ENV__.file)),
   pool_size: 5,
   pool: Ecto.Adapters.SQL.Sandbox
 
@@ -28,3 +28,7 @@ config :logger, level: :warning
 
 # Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime
+
+config :argon2_elixir,
+  t_cost: 1,
+  m_cost: 8

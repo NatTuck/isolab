@@ -9,3 +9,8 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+alias Isolab.Repo
+alias Isolab.Users.User
+
+Repo.insert!(%User{name: "nat", password_hash: Argon2.hash_pwd_salt("password")})

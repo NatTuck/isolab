@@ -10,6 +10,10 @@ defmodule IsolabWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :auth do
+    plug :fetch_current_user!
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
@@ -18,6 +22,21 @@ defmodule IsolabWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    post "/session", SessionController, :create
+  end
+  
+  scope "/", IsolabWeb do
+    pipe_through [:browser, :auth]
+
+    get "/dashboard", PageController, :dashboard
+    delete "/session", SessionController, :delete
+
+    live "/users", UserLive.Index, :index
+    live "/users/new", UserLive.Index, :new
+    live "/users/:id/edit", UserLive.Index, :edit
+
+    live "/users/:id", UserLive.Show, :show
+    live "/users/:id/show/edit", UserLive.Show, :edit
   end
 
   # Other scopes may use custom stacks.

@@ -1,1 +1,17 @@
-<p>Home</p>
+
+<.header>Log In</.header>
+
+<div>
+  <.form :let={f} action={~p"/session"} for={@conn}>
+    <div class="my-2">
+      <.input field={f[:name]} label="Name"/>
+    </div>
+    <div class="my-2">
+      <.input type="password" field={f[:password]} label="Password" />
+    </div>
+    <div class="my-2">
+      <.button>Login</.button>
+    </div>
+  </.form>
+</div>
+ 
