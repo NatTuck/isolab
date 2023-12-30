@@ -1,0 +1,14 @@
+[Unit]
+Description=Isolab Daemon
+
+[Service]
+Type=simple
+User=root
+Group=root
+Restart=on-failure
+
+WorkingDirectory=/tmp
+ExecStart=/usr/share/isolabd/bin/isolabd start
+
+[Install]
+WantedBy=multi-user.target
