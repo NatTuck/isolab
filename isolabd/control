@@ -1,0 +1,9 @@
+Package: isolabd
+Version: 0.1-1
+Section: base
+Priority: optional
+Architecture: all
+Depends: libjson-perl (>= 4.0)
+Maintainer: Nat Tuck <nathaniel.tuck@plymouth.edu>
+Description: Isolabed Lab Daemon
+  This daemon intentionally breaks the internet.
