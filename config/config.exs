@@ -9,7 +9,8 @@ import Config
 
 config :isolab,
   ecto_repos: [Isolab.Repo],
-  generators: [timestamp_type: :utc_datetime]
+  generators: [timestamp_type: :utc_datetime],
+  host_token: "earwax"
 
 # Configures the endpoint
 config :isolab, IsolabWeb.Endpoint,

@@ -7,7 +7,6 @@ defmodule IsolabWeb.UserSocket do
   # assign values that can be accessed by your channel topics.
 
   ## Channels
-
   channel "host:*", IsolabWeb.HostChannel
 
   # Socket params are passed from the client and can
